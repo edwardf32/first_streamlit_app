@@ -4,6 +4,7 @@ import requests
 import snowflake.connector
 from urllib.error import URLError
 
+my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
 
 streamlit.title('My Parents New Healthy Diner')
 streamlit.markdown("HEllo **world**!")
@@ -28,7 +29,6 @@ fruits_to_show = my_fruit_list.loc[fruits_selected]
 
 
 streamlit.dataframe(fruits_to_show)
-my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
 
 streamlit.header("Fruityvice Fruit Advice!")
 
