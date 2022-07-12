@@ -35,7 +35,7 @@ def get_fruityvice_data(this_fruit_choice):
   fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + fruit_choice)
   # turns the json into a table
   fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
-  # write your own comment - what does this do?
+  return fruityvice_normalized
   
 
 try:
